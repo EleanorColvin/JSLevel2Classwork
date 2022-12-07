@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            text-align:center;
+        }
+        p{
+            font:bold 26pt arial;
+        }
+    </style>
+    <script>
+        function initialize()
+        {
+            numberOutput = dpcumnr.getElementById("numout");
+            rndNum = 0;
+            display();
+        }
+        function changeNumber()
+        {
+            rndNum.getRandomInteger(1, 10);
+            display();
+        }
+        function getRandomInteger(lower, upper)
+        {
+            //P parseInt(rnd * (upper - (lower -1 )) + lower
+            var multiplier = upper - (lower -1);
+            var rnd = parseInt(Math.random() * multiplier) + lower;
+
+            return rnd;
+        }
+        function diaplay()
+        {
+            numberOutput.innerHTML = rndNum;
+        }
+    </script>
+</head>
+<body onload = "initialize();">
+    <h1>This is my great page about external files</h1>
+    <p id = "numout"></p>
+    <button onclick = "changeNUmber();">Change the number</button>  
+</body>
+</html>
